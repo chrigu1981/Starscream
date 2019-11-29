@@ -27,7 +27,11 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 import Foundation
+#if os(Linux)
+import zlib1g
+#else
 import zlib
+#endif
 
 class Decompressor {
     private var strm = z_stream()
